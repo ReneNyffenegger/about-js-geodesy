@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+  <title>Intersection</title>
+</head>
+
+<body onload='main()'>
+<div id='out'/>
+</body>
+<script type='module'>
+// ---------------------------------------------------------------------------------------
+   import LatLon from 'https://cdn.jsdelivr.net/npm/geodesy@2/latlon-nvector-spherical.js';
+
+   const pt_1 = new LatLon(47.31,  23.18);
+   const pt_2 = new LatLon(18.76, -14.63);
+
+   const pt   = LatLon.intersection(
+                  pt_1,  30.1,
+                  pt_2, 348.8
+                );
+
+   document.getElementById('out').innerHTML = 'Intersection is at <b>' + pt + '</b>.';
+// ---------------------------------------------------------------------------------------
+</script>
+</html>
